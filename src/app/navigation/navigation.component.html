@@ -1,0 +1,6 @@
+<mat-toolbar>
+    <button *ngIf="!start" mat-button routerLink="/" routerLinkActive="active">Home!</button>
+    <button mat-button routerLink="/profile" routerLinkActive="active" (click)="onProfile()">Profile!</button>
+    <button mat-button routerLink="/login" routerLinkActive="active" (click)="onLogin()">Login!</button>
+    <button mat-button (click)="onLogout()">Logout!</button>
+</mat-toolbar>

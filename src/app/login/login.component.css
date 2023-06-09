@@ -1,0 +1,11 @@
+div{
+    background-color: yellow;
+}
+
+.title{
+    text-align: center;
+}
+
+nav a.active{
+    color: aqua;
+}

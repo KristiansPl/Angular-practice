@@ -1,0 +1,8 @@
+<div *ngIf="userData.userName">
+    <hr>
+    <h1 class="title">{{userData.userName | uppercase}}' PROFILE!</h1>
+    {{userData.userName}}
+    {{userData.password}}
+    <button *ngIf="userData.popup" (click)="onSayHi()" mat-button>Say hi!</button>
+    <app-dashboard [parentData]="userData.userName"></app-dashboard>
+</div>
