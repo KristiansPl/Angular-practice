@@ -14,9 +14,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { UserService } from './user.service';
-import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { TestTableComponent } from './test-table/test-table.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     routingComponents,
     PageNotFoundComponent,
     DashboardComponent,
-    MainMenuComponent,
     NavigationComponent,
+    TestTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,10 @@ import { NavigationComponent } from './navigation/navigation.component';
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

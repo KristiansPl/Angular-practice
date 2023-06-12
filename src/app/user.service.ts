@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { IUser } from './user';
 import { JsonPipe } from '@angular/common';
 
@@ -19,12 +20,17 @@ export class UserService {
     popup: false
   }
 
-  public isLogedIn = false;
+  private loggedIn = new BehaviorSubject<boolean>(false);
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
 
   public setUserData(value: string, value2: string, value3: boolean){
     this.userData.userName = value;
     this.userData.password = value2;
     this.userData.popup = value3;
+    this.loggedIn.next(true);
   }
 
   getUser(): any{
@@ -41,6 +47,7 @@ export class UserService {
     this.userData.userName = "";
     this.userData.password = "";
     this.userData.popup = false;
+    this.loggedIn.next(false);
     this.router.navigate(['/']);
   }
   
